@@ -1,0 +1,92 @@
+GET http://localhost:5000
+
+###
+
+GET http://localhost:5000/api/auth
+
+###
+GET http://localhost:5000/api/watching
+###
+GET http://localhost:5000/api/favorite
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "nguyentuan200422@gmail.com",
+  "password": "tuan",
+  "firstname": "tuan",
+  "lastname": "nguyen"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "nguyentuan200422@gmail.com",
+  "password": "tuan"
+}
+
+###
+
+GET http://localhost:5000/api/watching
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDMwMzcsImV4cCI6MTcyMjI0MzMzN30.NKp5DN7dcnzeRveGbfuMJB4mEDBMPOSqyursHzc05iw
+
+###
+
+PUT http://localhost:5000/api/watching
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDQyOTYsImV4cCI6MTcyMjI0NDU5Nn0.ro9hp68IoxA6cc6uCtl8naL_fKBpF-Qgb1gXwRfbJd4
+
+{
+  "films":   [
+    {
+      "id": 1,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "id": 2,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "id": 4,
+      "quantity": 11,
+      "size": "S"
+    }
+  ]
+}
+
+###
+
+GET http://localhost:5000/api/favorite
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDk4OTksImV4cCI6MTcyMjI1MDE5OX0.F_-XOCBF5N77fIbA2EqwOjeTHczOA21MnV8CuA0z54g
+
+###
+
+PUT http://localhost:5000/api/favorite
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNTAwMTQsImV4cCI6MTcyMjI1MDMxNH0.Vc3LtBVJLSV3XEDpr_WIiRC1S7vBUsfzpoAQGaa0OmY
+
+{
+  "films":   [
+    {
+      "id": 1,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "id": 2,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "id": 4,
+      "quantity": 11,
+      "size": "S"
+    }
+  ]
+}
