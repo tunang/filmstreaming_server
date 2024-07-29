@@ -3,7 +3,7 @@ const router = express.Router();
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 
-const users = require('../models/users')
+const users = require('../models/Users')
 const favFilms = require('../models/FavoriteFilms')
 const watchingFilms = require('../models/WatchingFilms')
 const verifyToken = require("../middleware/authMiddle")
