@@ -12,8 +12,8 @@ const favFilms = require('../models/FavoriteFilms')
 //@access Private
 router.get("/", verifyToken, async (req, res) => {
     try {
-      const favoriteFilmsList = await favFilms.findOne({ user: req.userId });
-  
+      const favoriteFilmsList = await favFilms.findOne({ userId: req.userId });
+      
       res.json({ success: true, favoriteFilmsList});
     } catch (error) {
       console.log(error);

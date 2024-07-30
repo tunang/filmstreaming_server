@@ -25,20 +25,20 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "nguyentuan200422@gmail.com",
+  "email": "test@gmail.com",
   "password": "tuan"
 }
 
 ###
 
 GET http://localhost:5000/api/watching
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDMwMzcsImV4cCI6MTcyMjI0MzMzN30.NKp5DN7dcnzeRveGbfuMJB4mEDBMPOSqyursHzc05iw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3NzZhOWMwMWMwY2E3ZTYwNGM2ZjAiLCJpYXQiOjE3MjIzNzM5NDAsImV4cCI6MTcyMjQ2MDM0MH0.0ef6y9D7I7lpm8cWKChlYCqsNEB42wVfQ6UqhtvNVe0
 
 ###
 
 PUT http://localhost:5000/api/watching
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNjk4MDEsImV4cCI6MTcyMjM3MDEwMX0.Le5JAqcoTbMq1kzGy-lKEL-GoeI_DSwF-CJO1Z00AXs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3NzZhOWMwMWMwY2E3ZTYwNGM2ZjAiLCJpYXQiOjE3MjIzNzM5NDAsImV4cCI6MTcyMjQ2MDM0MH0.0ef6y9D7I7lpm8cWKChlYCqsNEB42wVfQ6UqhtvNVe0
 
 {
   "films":   [
@@ -63,7 +63,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
 ###
 
 GET http://localhost:5000/api/favorite
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDk4OTksImV4cCI6MTcyMjI1MDE5OX0.F_-XOCBF5N77fIbA2EqwOjeTHczOA21MnV8CuA0z54g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3NzZhOWMwMWMwY2E3ZTYwNGM2ZjAiLCJpYXQiOjE3MjIzNzM2NjEsImV4cCI6MTcyMjQ2MDA2MX0.ns_0Kc9JRGO2kSsQPbO3VGqR3_vvmp0vrJXmf93LOKM
 
 ###
 
@@ -73,21 +73,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
 
 {
   "films":   [
-    {
-      "_id": 1,
-      "quantity": 2,
-      "size": "S"
-    },
-    {
-      "_id": 2,
-      "quantity": 2,
-      "size": "S"
-    },
-    {
-      "_id": 4,
-      "quantity": 11,
-      "size": "S"
-    }
+    
   ]
 }
 

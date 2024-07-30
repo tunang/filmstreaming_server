@@ -12,7 +12,7 @@ const watchingFilms = require('../models/WatchingFilms')
 //@access Private
 router.get("/", verifyToken, async (req, res) => {
     try {
-      const watchingFilmsList = await watchingFilms.findOne({ user: req.userId });
+      const watchingFilmsList = await watchingFilms.findOne({ userId: req.userId });
   
       res.json({ success: true, watchingFilmsList});
     } catch (error) {
