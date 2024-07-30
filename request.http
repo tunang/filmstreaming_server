@@ -14,7 +14,7 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "email": "test@gmail.com",
+  "email": "test2@gmail.com",
   "password": "tuan",
   "firstname": "tuan",
   "lastname": "nguyen"
@@ -38,7 +38,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
 
 PUT http://localhost:5000/api/watching
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNDQyOTYsImV4cCI6MTcyMjI0NDU5Nn0.ro9hp68IoxA6cc6uCtl8naL_fKBpF-Qgb1gXwRfbJd4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNjk4MDEsImV4cCI6MTcyMjM3MDEwMX0.Le5JAqcoTbMq1kzGy-lKEL-GoeI_DSwF-CJO1Z00AXs
 
 {
   "films":   [
@@ -69,24 +69,40 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
 
 PUT http://localhost:5000/api/favorite
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIyNTAwMTQsImV4cCI6MTcyMjI1MDMxNH0.Vc3LtBVJLSV3XEDpr_WIiRC1S7vBUsfzpoAQGaa0OmY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNzA2MzQsImV4cCI6MTcyMjQ1NzAzNH0.NyNRce92y14Hq6OjiflweIZ5ckT5d-xoEOHumflX3YA
 
 {
   "films":   [
     {
-      "id": 1,
+      "_id": 1,
       "quantity": 2,
       "size": "S"
     },
     {
-      "id": 2,
+      "_id": 2,
       "quantity": 2,
       "size": "S"
     },
     {
-      "id": 4,
+      "_id": 4,
       "quantity": 11,
       "size": "S"
     }
   ]
+}
+
+###
+
+PUT http://localhost:5000/api/favorite/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNzA2MzQsImV4cCI6MTcyMjQ1NzAzNH0.NyNRce92y14Hq6OjiflweIZ5ckT5d-xoEOHumflX3YA
+
+{
+  "films":[
+    {
+      "_id": 8,
+      "quantity": 2,
+      "size": "S"
+    }
+  ]   
 }

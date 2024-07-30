@@ -58,4 +58,52 @@ router.put("/", verifyToken, async (req, res) => {
     }
   });
 
+
+
+  router.put("/add", verifyToken, async (req, res) => {
+    const { films } = req.body;
+    console.log(films._id);
+    try {
+      const favoriteFilmsListUpdateCondition = { userId: req.userId };
+  
+      // Retrieve the user's favorite films list
+      const userFavoriteFilms = await favFilms.findOne(favoriteFilmsListUpdateCondition);
+  
+      // Check if any film in the list has the same ID
+      const isFilmAlreadyAdded = userFavoriteFilms.favoriteFilms.some(film => film._id === films[0]._id);
+  
+      if (isFilmAlreadyAdded) {
+        return res.status(400).json({ success: false, message: 'Film already added to favorites' });
+      }
+  
+      // Rest of your code to add the film to the list
+      // ...
+
+      let updateFavoriteFilmsList = {
+        $push: {
+          favoriteFilms: { $each: films },
+        },
+      };
+  
+      const result = await favFilms.findOneAndUpdate(
+        favoriteFilmsListUpdateCondition,
+        updateFavoriteFilmsList
+      );
+  
+      if (!result) {
+        return res.status(401).json({ success: false, message: "fav products list not found" });
+      }
+  
+      return res.json({
+        success: true,
+        message: "Happy learning",
+        favoriteFilms: result.favoriteFilms,
+      });
+  
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: "Internel server error" });
+    }
+  });
+
 module.exports = router;
