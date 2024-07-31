@@ -38,27 +38,46 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3N
 
 PUT http://localhost:5000/api/watching
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3NzZhOWMwMWMwY2E3ZTYwNGM2ZjAiLCJpYXQiOjE3MjIzNzM5NDAsImV4cCI6MTcyMjQ2MDM0MH0.0ef6y9D7I7lpm8cWKChlYCqsNEB42wVfQ6UqhtvNVe0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0NDc1MTUsImV4cCI6MTcyMjUzMzkxNX0.avBAkZnMMwOctP9shtQvl6UjEsM_goGHIZ5jA1ktjpw
+
+{
+  "films":   [
+    
+  ]
+}
+
+###
+
+PUT http://localhost:5000/api/watching/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0NDc1MTUsImV4cCI6MTcyMjUzMzkxNX0.avBAkZnMMwOctP9shtQvl6UjEsM_goGHIZ5jA1ktjpw
 
 {
   "films":   [
     {
-      "id": 1,
+      "_id": 1,
       "quantity": 2,
-      "size": "S"
-    },
-    {
-      "id": 2,
-      "quantity": 2,
-      "size": "S"
-    },
-    {
-      "id": 4,
-      "quantity": 11,
       "size": "S"
     }
   ]
 }
+
+###
+DELETE http://localhost:5000/api/watching
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0NDc1MTUsImV4cCI6MTcyMjUzMzkxNX0.avBAkZnMMwOctP9shtQvl6UjEsM_goGHIZ5jA1ktjpw
+
+{
+  "films":[
+    {
+      "_id": 1,
+      "quantity": 2,
+      "size": "S"
+    }
+  ]  
+}
+
+
 
 ###
 
