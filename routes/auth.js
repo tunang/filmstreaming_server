@@ -141,6 +141,38 @@ router.post("/login", async (req, res) => {
 });
 
 
+router.delete("/logout", verifyToken, async (req, res) => {
+  const user = await users.findOne({ _id: req.userId });
+
+  if (!user) {
+    return res.status(400).json({ success: false, message: "cant logout" });
+  }
+
+  try {
+    let updateRefreshToken = {
+      $set: {
+        refreshToken: null,
+      },
+    };
+
+    const refreshTokenUpdateCondition = { _id: user._id };
+
+    const result = await users.updateOne(
+      refreshTokenUpdateCondition,
+      updateRefreshToken
+    );
+
+    return res.json({
+      success: true,
+      message: "Log out successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internel server error" });
+  }
+});
+
+
 const generateTokens = (payload) => {
     //create jwt
     const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {

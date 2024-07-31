@@ -102,7 +102,7 @@ router.put("/add", verifyToken, async (req, res) => {
     if (!result) {
       return res
         .status(401)
-        .json({ success: false, message: "fav products list not found" });
+        .json({ success: false, message: "fav films list not found" });
     }
 
     return res.json({
