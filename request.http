@@ -25,7 +25,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "test@gmail.com",
+  "email": "nguyentuan200422@gmail.com",
   "password": "tuan"
 }
 
@@ -69,11 +69,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3N
 
 PUT http://localhost:5000/api/favorite
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNzA2MzQsImV4cCI6MTcyMjQ1NzAzNH0.NyNRce92y14Hq6OjiflweIZ5ckT5d-xoEOHumflX3YA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0MTI4NzIsImV4cCI6MTcyMjQ5OTI3Mn0.7a4SJS77Ik1x3gdq1TSeaxsraibkcyKu8Li0sIwBVTA
 
 {
   "films":   [
-    
+    {
+      "_id": 8,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "_id": 7,
+      "quantity": 2,
+      "size": "S"
+    },
+    {
+      "_id": 5,
+      "quantity": 2,
+      "size": "S"
+    }
   ]
 }
 
@@ -81,7 +95,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
 
 PUT http://localhost:5000/api/favorite/add
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjIzNzA2MzQsImV4cCI6MTcyMjQ1NzAzNH0.NyNRce92y14Hq6OjiflweIZ5ckT5d-xoEOHumflX3YA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0MTI4NzIsImV4cCI6MTcyMjQ5OTI3Mn0.7a4SJS77Ik1x3gdq1TSeaxsraibkcyKu8Li0sIwBVTA
 
 {
   "films":[
@@ -90,5 +104,21 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M
       "quantity": 2,
       "size": "S"
     }
-  ]   
+  ]  
+}
+
+###
+
+DELETE http://localhost:5000/api/favorite
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0MTI4NzIsImV4cCI6MTcyMjQ5OTI3Mn0.7a4SJS77Ik1x3gdq1TSeaxsraibkcyKu8Li0sIwBVTA
+
+{
+  "films":[
+    {
+      "_id": 8,
+      "quantity": 2,
+      "size": "S"
+    }
+  ]  
 }
