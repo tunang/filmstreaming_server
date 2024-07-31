@@ -118,7 +118,6 @@ router.put("/add", verifyToken, async (req, res) => {
 
 router.delete("/", verifyToken, async (req, res) => {
   const { films } = req.body;
-
   try {
     const favoriteFilmsListUpdateCondition = { userId: req.userId };
 
@@ -137,8 +136,7 @@ router.delete("/", verifyToken, async (req, res) => {
 
     return res.json({
       success: true,
-      message: "Film was removed from favorites",
-      favoriteFilms: result.favoriteFilms,
+      message: "Film was removed from favorites"
     });
   } catch (error) {
     console.log(error);
