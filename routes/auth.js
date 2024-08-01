@@ -172,6 +172,46 @@ router.delete("/logout", verifyToken, async (req, res) => {
   }
 });
 
+router.post("/token", async (req, res) => {
+  const refreshToken = req.body.refreshToken;
+
+  if (!refreshToken) {
+    return res.sendStatus(401);
+  }
+
+  const user = await users.findOne({ refreshToken: refreshToken });
+  if (!user) return res.status(403).json({ success: false, message: "Cant find" });
+
+  try {
+    console.log(refreshToken);
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+
+    const tokens = generateTokens({ userId: user._id });
+
+    let updateRefreshToken = {
+      $set: {
+        refreshToken: tokens.refreshToken,
+      },
+    };
+
+    const refreshTokenUpdateCondition = { _id: user._id };
+
+    const result = await users.updateOne(
+      refreshTokenUpdateCondition,
+      updateRefreshToken
+    );
+
+    return res.json({
+      success: true,
+      message: "Token updated successfully",
+      tokens,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internel server error" });
+  }
+});
+
 
 const generateTokens = (payload) => {
     //create jwt

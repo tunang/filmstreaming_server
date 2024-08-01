@@ -30,6 +30,10 @@ Content-Type: application/json
 }
 
 ###
+DELETE  http://localhost:5000/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3M2IyNDU3NjdhOWFhNjJmMzFjM2EiLCJpYXQiOjE3MjI0NDk5ODMsImV4cCI6MTcyMjUzNjM4M30.NDNxRjthsIloUjqYujXze557Kjcaa7Goi0ow6lIn8hQ
+
+###
 
 GET http://localhost:5000/api/watching
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE3NzZhOWMwMWMwY2E3ZTYwNGM2ZjAiLCJpYXQiOjE3MjIzNzM5NDAsImV4cCI6MTcyMjQ2MDM0MH0.0ef6y9D7I7lpm8cWKChlYCqsNEB42wVfQ6UqhtvNVe0
